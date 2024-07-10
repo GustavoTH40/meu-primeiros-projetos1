@@ -20,17 +20,17 @@ local QuitDivider = Main:Divider{
 
 -- All functions have the Name, Description and Callback arguments so you can use them whenever ig yeah
 local KillAll = Divider:Button{
-    Name = "Kill all",
-    Description = "Kills all the players in the game!",
-    Callback = function()
-        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
-            if player.Character and player.Character:FindFirstChild("Humanoid") then
-                player.Character.Humanoid.Health = 0
-            end
+   Name = "Kill all",
+   Description = "Kills all the players in the game!",
+   Callback = function()
+    local localPlayer = game.Players.LocalPlayer
+    for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+        if player ~= localPlayer and player.Character and player.Character:FindFirstChild("Humanoid") then
+            player.Character.Humanoid.Health = 0
         end
-        print("All players killed.")
     end
- }
+    print("All players ki")
+}
 
 local LoopKillAll = Divider:Toggle{
    Name = "Loop kill all",
