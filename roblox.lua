@@ -7,10 +7,6 @@ local UI = Lib:Create{
 }
 
 local Main = UI:Tab{
-    Name = "teste"
- }
-
-local Main = UI:Tab{
    Name = "Inicio"
 }
 
@@ -24,12 +20,17 @@ local QuitDivider = Main:Divider{
 
 -- All functions have the Name, Description and Callback arguments so you can use them whenever ig yeah
 local KillAll = Divider:Button{
-   Name = "Kill all",
-   Description = "Kills all the players in the game!",
-   Callback = function()
-       print("All players killed.")
-   end
-}
+    Name = "Kill all",
+    Description = "Kills all the players in the game!",
+    Callback = function()
+        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+            if player.Character and player.Character:FindFirstChild("Humanoid") then
+                player.Character.Humanoid.Health = 0
+            end
+        end
+        print("All players killed.")
+    end
+ }
 
 local LoopKillAll = Divider:Toggle{
    Name = "Loop kill all",
