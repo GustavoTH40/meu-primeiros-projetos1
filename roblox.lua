@@ -7,15 +7,15 @@ local UI = Lib:Create{
 }
 
 local Main = UI:Tab{
-   Name = "Inicio"
+   Name = "Main"
 }
 
 local Divider = Main:Divider{
-   Name = "Inicio shit"
+   Name = "Main shit"
 }
 
 local QuitDivider = Main:Divider{
-   Name = "Sair
+   Name = "Quit"
 }
 
 -- All functions have the Name, Description and Callback arguments so you can use them whenever ig yeah
