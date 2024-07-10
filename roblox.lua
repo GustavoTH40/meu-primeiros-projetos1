@@ -7,6 +7,10 @@ local UI = Lib:Create{
 }
 
 local Main = UI:Tab{
+    Name = "teste"
+ }
+
+local Main = UI:Tab{
    Name = "Inicio"
 }
 
@@ -77,7 +81,7 @@ local Quit = QuitDivider:Button{
    Name = "Closes the ui library.",
    Callback = function()
        UI:Quit{
-           Message = "Fuck off...", -- closing message
+           Message = "Fechando...", -- closing message
            Length = 1 -- seconds the closing message shows for
        }
    end
